@@ -61,7 +61,7 @@ for t in d f ; do
     filename=$(basename $file)
     if [ "X$filename" != "X$(basename $LOCATION)" -a $(echo $IGNORE_LIST | grep -c $filename) -eq 0 ] ; then
       filesize=$(du -sh --apparent-size $file | cut -f1)
-      lastmod=$(stat -c %y $file | sed s/\\..*//g)
+      lastmod=$(git log -1 --format="%ad" -- $file | sed s/\\+.*//g)
       echo "      <tr>
         <td><a href=\"$BASE_URL/$LOCATION/$filename\" class=\"icon type-$t\">$filename</a></td>
         <td>$filesize</td>
