@@ -5,6 +5,14 @@ OUT="$LOCATION/index.html"
 BASE_URL="http://dudie.github.io/maven-repository"
 PAGE_TITLE="Index of $BASE_URL/$LOCATION"
 
+shift 1
+if [ "X$1" = "X--ignore" ] ; then
+  shift 1
+  IGNORE_LIST=$*
+fi
+
+echo "[INFO] Generating $OUT"
+
 echo "<!DOCTYPE html>
 <html>
 <head>
@@ -51,13 +59,15 @@ echo "<!DOCTYPE html>
 for t in d f ; do
   for file in $(find $LOCATION -maxdepth 1 -type $t | sort | grep -v "^\\.$") ; do
     filename=$(basename $file)
-    filesize=$(du -sh --apparent-size $file | cut -f1)
-    lastmod=$(stat -c %y $file | sed s/\\..*//g)
-    echo "      <tr>
+    if [ "X$filename" != "X$(basename $LOCATION)" -a $(echo $IGNORE_LIST | grep -c $filename) -eq 0 ] ; then
+      filesize=$(du -sh --apparent-size $file | cut -f1)
+      lastmod=$(stat -c %y $file | sed s/\\..*//g)
+      echo "      <tr>
         <td><a href=\"$BASE_URL/$LOCATION/$filename\" class=\"icon type-$t\">$filename</a></td>
         <td>$filesize</td>
         <td>$lastmod</td>
       </tr>" >> $OUT
+    fi
   done
 done
 
