@@ -1,0 +1,60 @@
+env:
+  global:
+    - secure: "Kim64wEL7T2dE2SwBYuzeUk+gBBH8GO99qLPY3dFrPP5Og7/mVYrVHwOyuRSljVS2YaKSgqwLbhnwQDEX8jPAa2g3CZoyO7D0clruHe934tH2bN3nWjIswKzNl6SkmtMJRJtba6Nkybn5v0z6PVU5Z8XsUitZMlKYqEDBWZbsMs="
+    - secure: "ASXb0rXAb2wuigJqRKaIzVWMOS714CpxFdfIaFLdr/gcl8V26xxlBXPUdEvj33UISYXtF47rqc+qjCFmVILhTS9z/8+D7ZR0qFgbPx8z1iPRveDTVRV3xgtVM/3pnkHai8JlmtJzxnkR3FrEBlvA8HAGweBdBv1tD6cIFMH0q0A="
+    - secure: "cSam/UhuNi9Hkd2xQ2eWkHJYTdz77rPI4TvN33ptF3q3wkO86ud5IzA7z8odqtrL+TFpIkiFMFwdPVEEk7qiD6kJC8p+5OKvfIRAS7ipxzhAlyj5Dw3Ppz1njHK+p81VMe+XTjqjsGUFh6SFNEEv70SvnDJYAOTi5Epm9cgZMcU="
+    - secure: "Fb4/WiT6ut3AesfEKuNFDjJIH8RdHziyu0omY7Igll7uykehRBgK628TOqvCsN0Tttg2S1PipWDrjgr5TQIPpTjHRAQJL7/H6QWn9epMY778lUKgatku7+o5zOM0lQEFEelS0TgE6mAj6igOMPs8eYSYmnIjpiALINK3sziqiQ4="
+    - secure: "Guaosx0uI0qGqKEvDA0vlnbz9AtNRtxKMtIa4HKaqnE2JbEEO5YwSEHaHtZcCUxVTo+UOHPhbz+wOZeVz/8QRBVXzpZxvmt16ZXSIL0gITw+DWxb34lbGq1Jhcy6+NCE3JGjhE5KGqqTsN0e0WV1zcwgaLmz1eLbRSeCt4u9NmA="
+    - secure: "G29F0SQhSZol8cuGZ+oxJ7Vs5Fdft7t7aqyRxKWkBRjYleppE79fd7o6D5uCXwbq27gQvPfmwc/0h0FisVegWIHg3hrYpo610WsmyKJDgF2XtHcMIU6vS/teqnmh3vlDFAdSDZGM3bejwygJzw8O3Kdh2jBEjWh7w2CbJr36GlQ="
+    - secure: "dFZotepyPIQ5kMSTM4lpmxRgOIG9xe549G1boZIIZd4J6bz8IXq7EhbXsvZf1c+XhcyorJ73l2+3Eaq2I2dtakySJWmBDOWL1A+xxxGpFhb/EDQXVEYRM9I31DZ16wi3Bf6fSDdWeMAF3c6hBI5LNsKXtfCBS7Yxyw7nI8HOwPg="
+    - secure: "US0DeueYzJNHkSSh44Qc4l2peg6sF7W22OxQxo/NsPbfXtOzIN9BnxICCpXahuV01oFiGuOULtY7dfirbOWUOPrft0z8oWof8Q1LXN/MoDINFOf+plkO6/NaYydpNFGffrx/Uu5Ce6sTx4vwMgpmlTRt0F6wD+yFWEcYob0kfCs="
+    - secure: "mgzaSXI9uGbUkr4TQ7dKPQ5vRrJFSxfXtglcx0HBk39zqY8fGwAIV/85jh7zHM/569v2zIlSmh/n1IJ8y4JwkdHG2XS50+J0Te6Y+Gc0/ZDeZBfO0Fldad6+AZEiXqlUOMzcZRz8aXnBr2GIW+h8uWiifONq/ap2+EbOQ+q0s1w="
+    - secure: "n8AqtzGRuXxuqKzmkeBzWuPO1/9Sk97UU0uzaLC7MF1Ri/Eib+qqMQtnssyz/wLLsvqtAbwKG1AE5gNCilBnhHulb7H7aCXI/RxH2ZqeRInk4+K+FCHzk0zbcivLgfDrxcwCgRT1bNtIqvKLo/vSPMj7LV0pKHxV2KDRLVYEghU="
+    - secure: "USM57PEPB69DgqWfq++otXnuthCnRo3LqS4jRqUVdt4eW1PnCvop7ScdsvMryUnVjNCiP/XJ4eLfgJs/88hzcteE1kFYKVs1yEv88Ft9U9nzQtzBogXAK0IBMDRYQ38qbX56wODNwRZ5CGdeeyOBA5CBLv+Ao6y+6vkf4jOvjMk="
+    - secure: "JWfvupZ7e6eNGWZS7NVvt9tIDftqjyy6D40sHontlS0Epnnm4y/0yqKDfbPkd3WYswhci0PjVCmGU2b+eAnOCKyOMzyphw99H7J4YyhB1BiXiDqeeO+W6J0TC41JKyMbspY/iXBB6MAFdhKKn2ivXoie3R8Fp+cjPFRAC1kNAtA="
+    - secure: "CmavBDdKI0t2Czz4MF02tiOeXVk3A9yehmPRhm52FSNWB9rPuQhVXjmThMzsKUJd04Vy/epMnCdrIL2ShUqPkoJXNXTy4weGWKtRjrZBgDzOGTm6ixzcl3bwa/Fic1PTXdlD3WAtjob8Zah8TWngq7IpoBxPvZRbe2y1jbAnSZY="
+    - secure: "M2OSW+2a/rMx42sYuHEZz3BSPThQxyjFuXBf5B5nsjqLVGmClNvi/wxgiCfBvJ9ef0dxOPB3SWtI1LU98qI2IByShnt6GJfAss2SsjnPBrGoUckqb9p0buu/+k2RGh4AwrZNePLSHoUcKO2FFT3RXUlQF7LWZ/RterV5+BObKAs="
+    - secure: "IVV1riKEQgYw7KE7/E6fLVomA2WqCBLxN3WYWB0NTinV6LMSVClU/tKW0kwzS5fvB4YG3sfSF/jowUhJxJPO2ojGsaIgauaS3C+p5do1HS0ek1m0HqvpEHtBU02WxJLQNGOvwiwq6ZG4mMOzfAl3Y6qAtnyk3NRFKGz6c2N6JlY="
+    - secure: "d6fTruvc9g1t7PNIOPdgrtd6xJrsxvFEKM9KyZ+3II2Q6tnse2pyYztrj0siZGjXePDT5W2mkqxqeUsZBPIHpUMsV59nw0cYl5AtcjJU0hBV6fTVkos/Eo9aUf+NqHHjQ9JtFiOld23rnGiLt5k/j8WWjuc0LRGFlx2LzxdBqEI="
+    - secure: "adNbCeuFrETqY38UGCG2+I+qqYLBECeJuHhju1yBGbh+By+fnwz8kzwP6R96wybD2FQPxB8CFdAG6il3SrFJZ07ol7sWsGESF4wAcZQcrieCUiAQ6fZ/SOiN1fv3v23mcH9TNi8yDHLlaE5XkLxX56NhtY+nH7QpH2U7D7mK00M="
+    - secure: "iKwTcqv+upb6K13uhj2bU6qUN5Hhk/kxJSaT9xxE5usdK+qCiYI7LIFwdz6xbiuB7bxhigC0AucSij7C8sWxfRAFv0+riupN62oMV7XNglijTPODQnnQfV+VietFMOfutsRQnKBZ3zxAQrBGe+fYI3IIa3sWmcIg65oepAHYMGk="
+    - secure: "cTXSBqTo79WO08mFOa7Ovyz5vgIX/ioD890wur00AUI0tED5QXpoXM7o1rnuoPbZI+0n9LyCtOgQE1mRGAnlFOqOr1wJIBgMyRu+FouGSfXLex20dVnuJuJvXDC3KGim/10rCGC2VahOhQsV56+72wM8xU2lDk+/hZ7bjRVI+QI="
+    - secure: "OKRD/mPHqsuMqnQkmi9xzBbT3K1D5HNAQ1/NLQFuo7538wRYZ34XCsGSvNn4eGl5YgiQ67otmW7CWmnd9hSwjLKIHo/yWur+rzMXyqz70Afb4qjWdJB1E6+OtrBUYygJiqjSVyB3WsTr/dXATE8NkxUtRM7thCWXBkYcoeA2j6s="
+    - secure: "LK5qzb6vVf7RdPYESbFxM54TBJcY0K7jyqgGuiRkx3O2xfVUekgl99BlXxDD7I9dNBRZ/PACNe31biMHtHI4LWRIwIqiOSygj/MgF8TZUvEI77gbH3lVDpIVpxfYVHMeV4UX7zSqeK7BjSJsCLN59yFHmjZAs1a9dSlplIAsAO8="
+    - secure: "B3npQENbMo1FyPba1ElLqFKiO/i5zxcFhbA3GmXOYYa9h414v1IZQpMJKTD4RIzcnizWNFaVZTw+G3Od5qRXCh5TZXZ8AvgP2GvfTW1q0mv7B4qQfel5Mspe3ayrpukTn+PUsH/O47rhuzlTehlfenfRpcxJIqsBFChrFDR8lX0="
+    - secure: "EygCR/cthQGFmdhfTdGDk76nVl7QV5mC6LfZ0IcTyr0epCJDf2uJlklFSRgJax38Hrwc0EXjhzNLiIw0BI1lOfKe27ITxRAZdjkUx10A3it3NNVwUTqu/fnsrhjVLw2dSr44p4GzrqzH2oRZc8jE/3+gyxoXrKzBJQMFC8pTOx8="
+    - secure: "UtxaAN/MNOR9QjdKEShMeL0GaZeaP0od/OjcblnGKZ6bxUTppnM48VwoK8u5o/O7kg1A9QA8j+08Io7jBlseWd1mWloq5C9o/tM6jH1Sz6NrVDj1pe+LnxEmEdbPkkFJljN9hfH0osJYB9K09GYvZX3hDhZ47LXCKyE6CG0TDRM="
+    - secure: "d+ECTXLcJS1f123zjcofCqCziuxx/qkmE3j6UPftwznZWoOgwVm608LJ3jjcie+ZHEdJWXgi5AlaPqrcOrPsaotUGdz95XxqmhkDeAPdk6b1FaqrU1UyD2RgpFHw5kLF0vQ107gUbEDoxZOH8dTktmOmic61hvAm6otl6DBhi6U="
+
+branches:
+  only:
+  - gh-pages
+
+before_script:
+# setup git configuration
+- git config --global user.email "jeremie+travis+ci@dudie.fr"
+- git config --global user.name "Travis CI"
+# ensure HEAD is the same as gh-pages and switch to gh-pages instead of staying on detached state
+- git diff gh-pages --exit-code && git checkout gh-pages
+# add remote with R+W capabilities
+- git remote add origin-rw git@github.com:dudie/maven-repository
+# setup SSH ID
+- mkdir .travis
+- echo "-----BEGIN RSA PRIVATE KEY-----" > .travis/deploy_key
+- chmod 600 .travis/deploy_key
+- for i in {0..24} ; do eval echo \$ID_RSA_$i >> .travis/deploy_key ; done
+- echo "-----END RSA PRIVATE KEY-----" >> .travis/deploy_key
+- curl "https://raw.github.com/dudie/maven-repository/master/github_key.pub" >> ~/.ssh/known_hosts
+- eval $(ssh-agent)
+- ssh-add .travis/deploy_key
+# retrieve index.html script generator
+- wget "https://raw.github.com/dudie/maven-repository/master/gen-directory-index.sh"
+
+script:
+# update index.html files
+- find -type d ! -path './.git*' ! -path './.travis*' -exec sh gen-directory-index.sh {} --ignore .git .travis .travis.yml gen-directory-index.sh index.html \;
+- find -type f -name 'index.html' -exec git add {} \;
+- git status
+- git commit -m "Update directory indexes" || echo "No index.html to update"
+- git push origin-rw gh-pages
+
