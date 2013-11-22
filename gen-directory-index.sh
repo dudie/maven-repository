@@ -60,8 +60,13 @@ for t in d f ; do
   for file in $(find $LOCATION -maxdepth 1 -type $t | sort | grep -v "^\\.$") ; do
     filename=$(basename $file)
     if [ "X$filename" != "X$(basename $LOCATION)" -a $(echo $IGNORE_LIST | grep -c $filename) -eq 0 ] ; then
-      filesize=$(du -sh --apparent-size $file | cut -f1)
-      lastmod=$(git log -1 --format="%ad" -- $file | sed s/\\+.*//g)
+      if [ "type_$t" = "type_f" ] ; then
+        filesize=$(du -sh --apparent-size $file | cut -f1)
+        lastmod=$(git log -1 --format="%ad" -- $file | sed s/\\+.*//g)
+      else
+        filesize=""
+        lastmod=""
+      fi
       echo "      <tr>
         <td><a href=\"$BASE_URL/$LOCATION/$filename\" class=\"icon type-$t\">$filename</a></td>
         <td>$filesize</td>
