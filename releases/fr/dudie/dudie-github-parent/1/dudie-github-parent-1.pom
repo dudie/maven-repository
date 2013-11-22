@@ -1,0 +1,470 @@
+<!-- 
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses />.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>fr.dudie</groupId>
+  <artifactId>dudie-github-parent</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+
+  <name>Dudie parent POM</name>
+  <description>Parent POM for dudie projects deployed on github</description>
+  <inceptionYear>2013</inceptionYear>
+
+  <url>https://github.com/dudie/dudie-github-parent</url>
+
+  <licenses>
+    <license>
+      <name>GNU General Public License, Version 3</name>
+      <url>http://www.gnu.org/licenses/gpl.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <scm>
+    <url>git@github.com:dudie/dudie-github-parent.git</url>
+    <connection>scm:git:git@github.com:dudie/dudie-github-parent.git</connection>
+    <developerConnection>scm:git:git@github.com:dudie/dudie-github-parent.git</developerConnection>
+    <tag>1</tag>
+  </scm>
+
+  <issueManagement>
+    <system>Github tracker</system>
+    <url>https://github.com/dudie/dudie-github-parent/issues</url>
+  </issueManagement>
+
+  <organization>
+    <name>Dudie</name>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>kops</id>
+      <name>Jérémie Huchet</name>
+      <properties>
+        <contact>http://www.google.com/recaptcha/mailhide/d?k=01ZGpzgTpH16GtSj8NB93DsQ==&amp;c=WrY-DpDtsC0sd8emmUY07rAJ5IhIoRWnxieganlteL0=</contact>
+      </properties>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+    <developer>
+      <id>orgoz</id>
+      <name>Olivier Boudet</name>
+      <properties>
+        <contact>http://www.google.com/recaptcha/mailhide/d?k=01ZGpzgTpH16GtSj8NB93DsQ==&amp;c=7bcMv951KPf73RPfdTZgbLRZbJvLfTOCFiCdA-kGkB8=</contact>
+      </properties>
+      <roles>
+        <role>Developer</role>
+      </roles>
+    </developer>
+  </developers>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <distributionManagement>
+    <repository>
+      <id>dudie-github-releases</id>
+      <name>Dudie releases hosted on Github</name>
+      <url>http://dudie.github.com/maven-repository/releases</url>
+    </repository>
+  </distributionManagement>
+
+  <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>1.5</version>
+          <configuration>
+            <licenseName>gpl_v3</licenseName>
+            <failOnMissingHeader>true</failOnMissingHeader>
+            <failOnNotUptodateHeader>true</failOnNotUptodateHeader>
+            <processStartTag>[license]</processStartTag>
+            <sectionDelimiter>----</sectionDelimiter>
+            <processEndTag>[/license]</processEndTag>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <version>1.3.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>2.3.2</version>
+          <configuration>
+            <source>1.6</source>
+            <target>1.6</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.12</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.3.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>2.9.1</version>
+          <configuration>
+            <charset>UTF-8</charset>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>2.2.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>2.10</version>
+          <configuration>
+            <configLocation>https://raw.github.com/kops/dudie-parent/master/etc/dudie-checks.xml</configLocation>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-scm-plugin</artifactId>
+          <version>1.8.1</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.3</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-release-plugin</artifactId>
+          <version>2.4.2</version>
+          <configuration>
+            <autoVersionSubmodules>true</autoVersionSubmodules>
+            <tagNameFormat>@{version}</tagNameFormat>
+            <arguments>-Pcheck-system-language</arguments>
+            <preparationGoals>clean license:check-file-header
+              license:update-project-license verify</preparationGoals>
+          </configuration>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.4</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>index</report>
+              <report>summary</report>
+              <report>project-team</report>
+              <report>issue-tracking</report>
+              <report>license</report>
+              <report>scm</report>
+              <report>distribution-management</report>
+              <report>dependencies</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>taglist-maven-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <tagListOptions>
+            <tagClasses>
+              <tagClass>
+                <displayName>Todos</displayName>
+                <tags>
+                  <tag>
+                    <matchString>TODO</matchString>
+                    <matchType>exact</matchType>
+                  </tag>
+                  <tag>
+                    <matchString>TJHU</matchString>
+                    <matchType>exact</matchType>
+                  </tag>
+                  <tag>
+                    <matchString>TOBO</matchString>
+                    <matchType>exact</matchType>
+                  </tag>
+                </tags>
+              </tagClass>
+            </tagClasses>
+          </tagListOptions>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.10</version>
+        <configuration>
+          <configLocation>${basedir}/checkstyle.xml</configLocation>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>cobertura-maven-plugin</artifactId>
+        <version>2.5.1</version>
+        <configuration>
+          <instrumentation>
+            <excludes>
+              <exclude>fr/dudie/**/*Test.class</exclude>
+            </excludes>
+          </instrumentation>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <version>2.9</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.3</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <profiles>
+    <profile>
+      <id>check-system-language</id>
+      <!-- This is a check to avoid time loss when the release:prepare -->
+      <!-- goal doesn't commit modified poms. -->
+      <!-- See http://jira.codehaus.org/browse/MRELEASE-812 -->
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>check-system-language-is-english</id>
+                <phase>validate</phase>
+                <goals>
+                  <goal>enforce</goal>
+                </goals>
+                <inherited>true</inherited>
+                <configuration>
+                  <rules>
+                    <requireProperty>
+                      <property>env.LANG</property>
+                      <message>
+                        Environment variable $LANG must be set to english for maven-release-plugin to work
+                      </message>
+                      <regex>en_.+</regex>
+                      <regexMessage>
+                        $LANG must be set to english, eg. en_EN.UTF-8
+                      </regexMessage>
+                    </requireProperty>
+                  </rules>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>attach-sources-and-javadoc</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadocs</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>deploy-to-github</id>
+      <activation>
+        <property>
+          <name>performRelease</name>
+          <value>true</value>
+        </property>
+      </activation>
+      <!-- 0. Disable default deployment task -->
+      <!-- 1. Checkout the maven-repository hosted on Github to target/maven-repository -->
+      <!-- 2. Deploy artefacts to target/maven-repository/releases -->
+      <!-- 3. Add updated files for commit -->
+      <!-- 4. Push changes to remote repository -->
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>default-deploy</id>
+                <configuration>
+                  <skip>true</skip>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.twdata.maven</groupId>
+            <artifactId>mojo-executor-maven-plugin</artifactId>
+            <version>2.1.0</version>
+            <inherited>true</inherited>
+            <executions>
+              <execution>
+                <id>deploy-checkout-maven-repository</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>execute-mojo</goal>
+                </goals>
+                <configuration>
+                  <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-plugin</artifactId>
+                    <version>1.8.1</version>
+                  </plugin>
+                  <goal>checkout</goal>
+                  <configuration>
+                    <workingDirectory>${project.build.directory}/maven-repository</workingDirectory>
+                    <checkoutDirectory>${project.build.directory}/maven-repository</checkoutDirectory>
+                    <connectionUrl>scm:git:git@github.com:dudie/maven-repository.git</connectionUrl>
+                    <scmVersion>gh-pages</scmVersion>
+                    <scmVersionType>branch</scmVersionType>
+                  </configuration>
+                </configuration>
+              </execution>
+              <execution>
+                <id>deploy-locally</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>execute-mojo</goal>
+                </goals>
+                <configuration>
+                  <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>2.8.1</version>
+                  </plugin>
+                  <goal>deploy</goal>
+                  <configuration>
+                    <altSnapshotDeploymentRepository>local::default::file://${project.build.directory}/maven-repository/snapshots</altSnapshotDeploymentRepository>
+                    <altReleaseDeploymentRepository>local::default::file://${project.build.directory}/maven-repository/releases</altReleaseDeploymentRepository>
+                    <updateReleaseInfo>true</updateReleaseInfo>
+                  </configuration>
+                </configuration>
+              </execution>
+              <execution>
+                <id>deploy-add-arfifacts</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>execute-mojo</goal>
+                </goals>
+                <configuration>
+                  <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-plugin</artifactId>
+                    <version>1.8.1</version>
+                  </plugin>
+                  <goal>add</goal>
+                  <configuration>
+                    <workingDirectory>${project.build.directory}/maven-repository</workingDirectory>
+                    <includes>**/*</includes>
+                  </configuration>
+                </configuration>
+              </execution>
+              <execution>
+                <id>deploy-checkin-maven-repository</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>execute-mojo</goal>
+                </goals>
+                <configuration>
+                  <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-plugin</artifactId>
+                    <version>1.8.1</version>
+                  </plugin>
+                  <goal>checkin</goal>
+                  <configuration>
+                    <workingDirectory>${project.build.directory}/maven-repository</workingDirectory>
+                    <developerConnectionUrl>scm:git:git@github.com:dudie/maven-repository.git</developerConnectionUrl>
+                    <message>
+                      Deploy ${project.groupId}:${project.artifactId}:${project.version}
+                    </message>
+                    <scmVersion>gh-pages</scmVersion>
+                    <scmVersionType>branch</scmVersionType>
+                  </configuration>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
+</project>
