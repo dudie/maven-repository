@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>fr.itinerennes</groupId>
+  <artifactId>itinerennes-parent</artifactId>
+  <versioning>
+    <versions>
+      <version>0.7-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20131125215011</lastUpdated>
+  </versioning>
+</metadata>
