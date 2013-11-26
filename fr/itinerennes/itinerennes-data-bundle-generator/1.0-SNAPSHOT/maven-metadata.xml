@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>fr.itinerennes</groupId>
+  <artifactId>itinerennes-data-bundle-generator</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20131126.231151</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20131126231151</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>jar</extension>
+        <value>1.0-20131126.231151-1</value>
+        <updated>20131126231151</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>1.0-20131126.231151-1</value>
+        <updated>20131126231151</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>dist-pkg</classifier>
+        <extension>tar.bz2</extension>
+        <value>1.0-20131126.231151-1</value>
+        <updated>20131126231151</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
