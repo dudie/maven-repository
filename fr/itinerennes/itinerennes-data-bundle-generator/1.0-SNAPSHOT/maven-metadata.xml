@@ -5,26 +5,26 @@
   <version>1.0-SNAPSHOT</version>
   <versioning>
     <snapshot>
-      <timestamp>20131205.232645</timestamp>
-      <buildNumber>5</buildNumber>
+      <timestamp>20131206.005432</timestamp>
+      <buildNumber>6</buildNumber>
     </snapshot>
-    <lastUpdated>20131205232645</lastUpdated>
+    <lastUpdated>20131206005432</lastUpdated>
     <snapshotVersions>
       <snapshotVersion>
         <extension>jar</extension>
-        <value>1.0-20131205.232645-5</value>
-        <updated>20131205232645</updated>
+        <value>1.0-20131206.005432-6</value>
+        <updated>20131206005432</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.0-20131205.232645-5</value>
-        <updated>20131205232645</updated>
+        <value>1.0-20131206.005432-6</value>
+        <updated>20131206005432</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>dist-pkg</classifier>
         <extension>tar.bz2</extension>
-        <value>1.0-20131205.232645-5</value>
-        <updated>20131205232645</updated>
+        <value>1.0-20131206.005432-6</value>
+        <updated>20131206005432</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
