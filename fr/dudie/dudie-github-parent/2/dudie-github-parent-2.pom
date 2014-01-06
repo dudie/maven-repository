@@ -38,7 +38,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
     <url>git@github.com:dudie/dudie-github-parent.git</url>
     <connection>scm:git:git@github.com:dudie/dudie-github-parent.git</connection>
     <developerConnection>scm:git:git@github.com:dudie/dudie-github-parent.git</developerConnection>
-    <tag>2</tag>
+    <tag>v2</tag>
   </scm>
 
   <issueManagement>
@@ -224,7 +224,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses />.
           <version>2.4.2</version>
           <configuration>
             <autoVersionSubmodules>true</autoVersionSubmodules>
-            <tagNameFormat>@{version}</tagNameFormat>
+            <tagNameFormat>v@{version}</tagNameFormat>
             <arguments>-Pcheck-system-language</arguments>
             <preparationGoals>clean license:check-file-header license:update-project-license verify</preparationGoals>
           </configuration>
