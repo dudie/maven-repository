@@ -3,12 +3,13 @@
   <groupId>fr.itinerennes</groupId>
   <artifactId>itinerennes-android-tests</artifactId>
   <versioning>
-    <release>0.6.6</release>
+    <release>0.6.7</release>
     <versions>
       <version>0.6.4</version>
       <version>0.6.5</version>
       <version>0.6.6</version>
+      <version>0.6.7</version>
     </versions>
-    <lastUpdated>20140601220504</lastUpdated>
+    <lastUpdated>20140831202942</lastUpdated>
   </versioning>
 </metadata>
