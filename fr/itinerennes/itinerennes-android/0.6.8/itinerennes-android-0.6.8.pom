@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>fr.itinerennes</groupId>
+        <artifactId>itinerennes-parent</artifactId>
+        <version>0.6.8</version>
+    </parent>
+
+    <artifactId>itinerennes-android</artifactId>
+    <packaging>apk</packaging>
+
+    <name>ItineRennes</name>
+    <description>ItineRennes android application</description>
+
+    <dependencies>
+        <!-- BEGIN - PROVIDED DEPENDENCIES -->
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
+        <!-- END - PROVIDED DEPENDENCIES -->
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>itinerennes-commons</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.acra</groupId>
+            <artifactId>acra</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-android</artifactId>
+            <classifier>itinerennes</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.osmdroid</groupId>
+            <artifactId>osmdroid-android</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fr.dudie</groupId>
+            <artifactId>rennes-data-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fr.dudie</groupId>
+            <artifactId>nominatim-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>fr.itinerennes</groupId>
+            <artifactId>itinerennes-api</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>${basedir}/src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <configuration>
+	            <!-- 
+                      default assets directory is set to "target/generated-resources/assets" to let maven profiles 
+                      overriding and filtering them
+                    -->
+                    <assetsDirectory>${project.build.directory}/generated-resources/assets</assetsDirectory>
+                </configuration>
+            </plugin>
+            
+            <!-- Eclipse environment : setup .classpath file -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-cli</id>
+                        <goals>
+                            <goal>copy-resources</goal>
+                        </goals>
+                        <configuration>
+                            <resources>
+                                <resource>
+                                    <directory>${basedir}/etc/eclipse</directory>
+                                    <filtering>true</filtering>
+                                </resource>
+                            </resources>
+                            <outputDirectory>${basedir}</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!-- 
+              Generates a second jar file with classifier "with-assets" having assets/** attached to the root of the 
+              jar file 
+            -->
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>package-jar-with-assets</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <configuration>
+                            <appendAssemblyId>true</appendAssemblyId>
+                            <attach>true</attach>
+                            <descriptor>${basedir}/assembly-with-assets.xml</descriptor>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <!-- DEVELOPMENT PROFILE -->
+            <id>dev</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>!true</value>
+                </property>
+            </activation>
+            <build>
+                <resources>
+                    <!-- development profile copies the "assets" folder content to "target/generated-resources/assets" -->
+                    <resource>
+                        <directory>${basedir}/assets</directory>
+                        <targetPath>${project.build.directory}/generated-resources/assets</targetPath>
+                        <filtering>false</filtering>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+        <profile>
+            <!-- RELEASE PROFILE -->
+            <id>release</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <resources>
+                    <resource>
+                        <!-- 
+                          release profile copies the "assets" folder content to "target/generated-resources/assets" 
+                          except some files... 
+                        -->
+                        <directory>${basedir}/assets</directory>
+                        <targetPath>${project.build.directory}/generated-resources/assets</targetPath>
+                        <filtering>false</filtering>
+                        <excludes>
+                            <exclude>itinerennes.properties</exclude>
+                            <exclude>slf4j.properties</exclude>
+                        </excludes>
+                    </resource>
+                    <resource>
+                        <!-- ... these files are copied from "etc/conf/prod" -->
+                        <directory>${basedir}/etc/conf/prod</directory>
+                        <targetPath>${project.build.directory}/generated-resources/assets</targetPath>
+                        <filtering>false</filtering>
+                        <includes>
+                            <include>slf4j.properties</include>
+                        </includes>
+                    </resource>
+                </resources>
+                <plugins>
+                    <plugin>
+                        <groupId>org.beardedgeeks</groupId>
+                        <artifactId>maven-merge-properties-plugin</artifactId>
+                        <version>0.2</version>
+                        <configuration>
+                            <merges>
+                                <merge>
+                                    <targetFile>${project.build.directory}/generated-resources/assets/itinerennes.properties</targetFile>
+                                    <propertiesFiles>
+                                        <propertiesFile>${basedir}/etc/conf/prod/itinerennes.properties</propertiesFile>
+                                        <propertiesFile>${basedir}/assets/itinerennes.properties</propertiesFile>
+                                    </propertiesFiles>
+                                </merge>
+                            </merges>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>merge-itinerennes-properties</id>
+                                <phase>generate-resources</phase>
+                                <goals>
+                                    <goal>merge</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                        <artifactId>android-maven-plugin</artifactId>
+                        <configuration>
+                            <sign>
+                                <debug>false</debug>
+                            </sign>
+                            <manifestDebuggable>false</manifestDebuggable>
+                            <manifestVersionCode>${versionCode}</manifestVersionCode>
+                            <manifestVersionName>${project.version}</manifestVersionName>
+                        </configuration>
+                        <executions>
+                            <!-- update the manifest file -->
+                            <execution>
+                                <id>manifestUpdate</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>manifest-update</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
